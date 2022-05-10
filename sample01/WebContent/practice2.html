@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>체육관 이용 요금</h1>
+기본 사용료(2명,4시간)40,800원
+<br>
+
+<input type="checkbox" id="ch1" value="20000" onclick="sum(0)">야간 조명(20,000원)
+<br>
+<input type="checkbox" id="ch2" value="4000" onclick="sum(1)">배구 네트*2명(4,000원)
+<br>
+<input type="checkbox" id="ch3" value="5000" onclick="sum(2)">배구공x10개(20,000원)
+<br>
+합계 금액<input type="text" id="money" value="40800">원형
+
+<script type="text/javascript">
+
+let total = parseInt(document.getElementById("money").value);
+
+function sum(num){
+	
+	if(num==0){
+		let ch1 = document.getElementById('ch1').checked;//true or false
+		//alert(ch1);
+		let value = parseInt(document.getElementById('ch1').value);
+		if(ch1==true){
+			total=total+value;
+		}else{
+			total=total-value;
+		}
+		document.getElementById("money").value=total;
+	}
+	else if(num==1){
+		let ch2 = document.getElementById('ch2').checked;//true or false
+
+		let value = parseInt(document.getElementById('ch2').value);
+		if(ch2==true){
+			total=total+value;
+		}else{
+			total=total-value;
+		}
+		document.getElementById("money").value=total;
+	}
+	else if(num==2){
+		let ch3 = document.getElementById('ch3').checked;//true or false
+		//alert(ch1);
+		let value = parseInt(document.getElementById('ch3').value);
+		if(ch3==true){
+			total=total+value;
+		}else{
+			total=total-value;
+		}
+		document.getElementById("money").value=total;
+	}
+	
+	
+}
+
+</script>
+</body>
+</html>

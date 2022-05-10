@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+변수(variable)
+
+<script type="text/javascript">
+/* 
+	Integer,double,String,Character,boolean,Object,Array
+	
+	var let
+	
+	MyClass cls = new MyClass();
+			객체,object
+			instance(==주체)
+	stack heap static sys
+	cls	  동적
+	
+	
+*/
+var v;
+v=123;
+//alert(v)
+
+let l;
+l=234;
+//alert(l)
+
+let num=123
+let pi=3.131582;
+let name="홍길동"
+let answer=true;
+let n=1,str="abc";
+
+num=234+12;
+num="hello";
+console.log(num);
+
+let strNum="5"+3+1;//531
+console.log(strNum);
+
+let numStr=3+1+"5"; //45
+console.log(numStr);
+
+//Array
+//let cars=[];
+//int arrNum[]=null;
+//let cars=["saab","volvo","bmw"];
+//console.log(cars[1]);
+let cars = new Array(3);
+cars[0]="saab"
+cars[1]="volvo"
+cars[2]="bmw"
+
+for (i = 0; i < cars.length; i++) {
+	console.log(cars[i])
+}
+for(i in cars) //java의 for-each문과 살짝 다름
+{
+	console.log(cars[i]);
+}
+let obj={					//json(=데이터)(key:value) pair
+		firstname:"길동",
+		lastname:"홍",
+		age:24,
+		func:function(){
+			console.log("func()함수 호출");
+		}
+};
+console.log(obj.firstname);
+console.log(obj.age);
+obj.func;
+
+class Person{
+	
+	constructor(name,age)
+	{
+		this.name=name; //this는 자기 자신의 영역을 가르키는 주소
+		this.age=age;
+	}
+	funcName(){
+		console.log("Person funcName()");
+	}
+}
+
+let p = new Person("홍길동",24);
+console.log(p.name);
+console.log(p.age);
+p.funcName();
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

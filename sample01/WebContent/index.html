@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!--
+	JavaScript != Java
+	
+	client(웹브라우저,화면단)->front end
+	목적: tag들을 접근하기 위한 스크립트 Node.js->react,vue
+		 보조 프로그래밍 언어다.
+		 컴파일을 하지 않는다. ->빠르다->가볍다
+	
+	Java Script 경량화->Jquery(Ajax) -> axios
+	
+	예) 회원가입 시->빈칸인가 조사 / ID글자수 조사 / PW를 숫자 + 문자, 대소문자 포함
+		CSS를 제어, 구현
+		Timer를 설정해서 특수 효과 처리 가능하다.
+		
+	function(c언어)
+	class(java)
+	
+	attribute(속성)
+	property(특성)
+	
+	element(요소)
+	id		-> javascript 접근 속성 1개
+	class	-> CSS				  다수
+	name	-> 데이터 전송
+	
+	in-line tag안	거의안씀
+	internal head,body
+	external 외부파일
+  -->
+  
+  <p id="demo">여기가 p태그입니다</p>
+  
+  <script type="text/javascript">
+  //여기가 JavaScript 영역
+  
+  console.log("hello JS");
+  
+  //alert("javaScript가 실행되었습니다");
+  
+  //variable
+  var v=document.getElementById("demo").innerHTML; //getter
+  //alert(v);
+  
+  document.getElementById("demo").innerHTML="p tag"//setter
+  
+  var obj=document.getElementById("demo");
+  
+  window.alert(obj.innerHTML);
+  </script>
+</body>
+</html>
