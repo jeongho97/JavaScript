@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<p id="pid">11일 기재부에 따르면 추경호 부총리 겸 기획재정부 장관은 취임 첫날인 10일 1급 이상 간부들과 함께 도시락 만찬을 하며 물가·추가경정예산안, 금융·외환시장 동향 등 당면 현안을 긴급 점검했다.</p>
+
+<script type="text/javascript">
+/* 
+	String (wrapper)
+*/
+
+let str=document.getElementById("pid").innerHTML;
+
+//let pos=str.indexOf("부총리");//문자열의 위치
+//let pos=str.lastIndexOf() //문자열 뒤에서 부터
+//let pos = str.search("장관");
+//document.getElementById("demo").innerHTML=pos;
+//let newstr=str.slice(29,35); //substring
+//document.getElementById("demo").innerHTML=newstr;
+//let c = str.charAt(1);
+//document.getElementById("demo").innerHTML=c;
+
+str="hello,world,java,script"; //홍길동-24-서울시
+let arrStr=str.split(","); // , ==token
+for(i=0;i<arrStr.length;i++){
+	console.log(arrStr[i]);	
+}
+
+</script>
+
+</body>
+</html>

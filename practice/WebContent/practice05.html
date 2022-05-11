@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>다음 생일까지 남은 일수</h1>
+다음 버튼을 클릭하여 생일을 입력하면,<br>
+다음 생일까지 남은 일수를 볼 수 있습니다
+<br><br>
+<button type="button" onclick="count()">생일을 입력</button>
+<br><br>
+
+남은 일수:<h3 id="days"></h3>
+
+<script type="text/javascript">
+function count(){
+	//input
+	let bm=prompt("생일에 해당하는 달을 입력해 주십시오");
+	let bd=prompt("생일에 해당하는 일을 입력해 주십시오");
+	
+	let now=new Date();
+	let birth=new Date();
+	birth.setMonth(bm - 1);
+	birth.setDate(bd);
+	
+	let ms = birth.getTime() - now.getTime(); //ms
+	if(ms <=0){ //생일이 지난 경우
+		let by=birth.getFullYear();
+		birth.setFullYear(by+1);
+		ms=birth.getTime()-now.getTime();
+	}
+	
+	let days=ms/(24*60*60*1000)
+	
+	days=Math.ceil(days);//소수점으로 결과가 나오기때문에
+	
+	document.getElementById("days").innerHTML="<b>"+days+"</b>"
+	
+	
+}
+
+</script>
+
+</body>
+</html>

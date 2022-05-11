@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- form -> 이동 (if문을 걸어서 걸러낼 수 없다) -->
+<form action="view1.html">
+입력:<input type="text" name="name">
+<input type="submit" value="이동">
+</form>
+<br><br>
+
+입력:<input type="text" id="name">
+<input type="button" onclick="move()" value="이동">
+
+<script type="text/javascript">
+
+function move(){
+	let name=document.getElementById("name").value;
+	if(name.trim()=="") /* 앞뒤 공백 없애줌 */
+	{
+		alert("입력해 주십시오");
+	}else{
+	location.href="view1.html?name"+name; /* JS에서는 이렇게 해야 parameter를 넘길 수 있다 */
+	}
+}
+
+</script>
+</body>
+</html>

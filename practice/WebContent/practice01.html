@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>배경색의 변경</h1>
+<br>
+※다음 버튼을 클릭하면 홈페이지의 배경색을 변경할 수 있습니다.
+<br>
+<!-- <button type="button" id=red onclick="btnclick1()">빨강</button> -->
+<button onclick=document.bgColor='red'>빨강</button>
+<button type="button" id=green onclick="btnclick2()">녹색</button>
+<button type="button" id=blue onclick="btnclick3()">청색</button>
+<button type="button" id=orange onclick="btnclick4()">주황색</button>
+<button type="button" id=black onclick="colorset(1)">검정색</button>
+<button type="button" id=white onclick="colorset(2)">흰색</button>
+
+<script type="text/javascript">
+
+function btnclick1(){
+	document.body.style.backgroundColor='red'
+}
+function btnclick2(){
+	document.body.style.backgroundColor='green'
+}
+function btnclick3(){
+	document.body.style.backgroundColor='blue'
+}
+function btnclick4(){
+	document.body.style.backgroundColor='orange'
+}
+function colorset(n){
+	if(n==1){
+		document.body.style.backgroundColor='black'
+	}
+	else if(n==2){
+		document.body.style.backgroundColor='white'
+	}
+}
+
+
+</script>
+</body>
+</html>

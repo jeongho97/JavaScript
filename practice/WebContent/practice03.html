@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>미술관 및 박물관의 링크</h1>
+<select id="sel" onchange="changeValue()">
+	<option >대상을 선택</option>
+	<option id="id1" value="id1">서울시립미술관</option>
+	<option id="id2" value="id2">국립현대미술관</option>
+	<option id="id3" value="id3">예술의전당</option>
+	<option id="id4" value="id4">국립중앙박물관</option>
+	<option id="id5" value="id5">서울역사박물관</option>
+	<option id="id6" value="id6">국립민속박물관</option>
+</select>
+
+<script type="text/javascript">
+function changeValue(){
+	let value=document.getElementById('sel').value;
+	if(value=="id1"){
+		location.href='http://sema.seoul.go.kr/'
+	}
+	else if(value=="id2"){
+		location.href='http://www.mmca.go.kr/'
+	}
+	else if(value=="id3"){
+		location.href='http://www.sac.or.kr/'
+	}
+	else if(value=="id4"){
+		location.href='http://www.museum.go.kr/'
+	}
+	else if(value=="id5"){
+		location.href='http://www.museum.seoul.kr/'
+	}
+	else if(value=="id6"){
+		location.href='http://www.nfm.go.kr/'
+	}
+}
+</script>
+</body>
+</html>

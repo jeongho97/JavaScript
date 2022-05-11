@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- 
+		날짜 (Date,Calendar)-java
+			now()-mysql
+ -->
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+
+let d=new Date(); //현재
+
+d=new Date(2022,5 - 1,12,10,25,32,0); //월:0~11로 되어있다.
+
+d=new Date("October 12,2022 12:32:33");
+
+document.getElementById("demo").innerHTML=d;
+
+document.getElementById("demo").innerHTML=d.getDay(); //요일 일=0 월=1
+
+document.getElementById("demo").innerHTML=d.getFullYear(); //연도
+
+document.getElementById("demo").innerHTML=d.getMonth()+1; //월
+
+document.getElementById("demo").innerHTML=d.getDate(); //일
+
+document.getElementById("demo").innerHTML=d.getHours(); //시
+
+document.getElementById("demo").innerHTML=d.getMinutes(); //분
+
+document.getElementById("demo").innerHTML=d.getSeconds(); //초
+
+</script>
+
+
+</body>
+</html>
