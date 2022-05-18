@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<style type="text/css">
+/*
+Inspired by http://dribbble.com/shots/917819-iPad-Calendar-Login?list=shots&sort=views&timeframe=ever&offset=461
+*/
+body {
+    background: url(http://habrastorage.org/files/c9c/191/f22/c9c191f226c643eabcce6debfe76049d.jpg);
+}
+
+.jumbotron {
+	text-align: center;
+	width: 30rem;
+	border-radius: 0.5rem;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 4rem auto;
+	background-color: #fff;
+	padding: 2rem;
+}
+
+.container .glyphicon-list-alt {
+	font-size: 10rem;
+	margin-top: 3rem;
+	color: #f96145;
+}
+
+input {
+	width: 100%;
+	margin-bottom: 1.4rem;
+	padding: 1rem;
+	background-color: #ecf2f4;
+	border-radius: 0.2rem;
+	border: none;
+}
+h2 {
+	margin-bottom: 3rem;
+	font-weight: bold;
+	color: #ababab;
+}
+.btn {
+	border-radius: 0.2rem;
+}
+.btn .glyphicon {
+	font-size: 3rem;
+	color: #fff;
+}
+.full-width {
+	background-color: #8eb5e2;
+	width: 100%;
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+	-moz-border-radius-topright: 0;
+	-moz-border-radius-bottomright: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.box {
+	bottom: 0;
+	left: 0;
+	margin-bottom: 3rem;
+	margin-left: 3rem;
+	margin-right: 3rem;
+}
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+<div class="jumbotron">
+  <div class="container">
+    <span class="glyphicon glyphicon-list-alt"></span>
+    <h2>Calendar</h2>
+    <div class="box">
+    	<p style="font-size:15px">생일을 입력하세요</p>
+    	<input type="text" id="year" placeholder="년도">
+    	<input type="text" id="month" placeholder="월">
+    	<input type="text" id="day" placeholder="일">
+    	<!-- <button class="btn btn-default full-width" id="date">달력</button> -->
+    	<input type="button" id="date" value="달력으로 선택하기">
+    	<br>
+	    <button class="btn btn-default full-width" onclick="count()"><span class="glyphicon glyphicon-ok"></span></button>
+	    <br><br><br>
+	    <input type="text" id="days" placeholder="지금까지 살아온 날수">
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+let by,bm,bd;
+$(document).ready(function() {
+
+	let week=['일','월','화','수','목','금','토'];
+	
+	$("#date").datepicker({
+		dateFormat: "yy/mm/dd",
+		dayNamesMin: week,
+		monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		onSelect: function(d){
+			alert(d);
+			
+			let arr=d.split('/');
+			
+			by=arr[0];
+			bm=arr[1];
+			bd=arr[2];
+			document.getElementById("year").value=by;
+			document.getElementById("month").value=bm;
+			document.getElementById("day").value=bd;
+		}
+		
+	});
+	
+	
+})
+function count(){
+	//input
+	by=document.getElementById("year").value;
+	bm=document.getElementById("month").value;
+	bd=document.getElementById("day").value;
+	
+	let now=new Date();
+	let birth=new Date();
+	birth.setYear(by);
+	birth.setMonth(bm - 1);
+	birth.setDate(bd);
+	
+	let ms = now.getTime()-birth.getTime(); //ms
+	console.log(ms);
+	if(ms <0){ //생일이 미래인 경우
+		alert("생일이 미래일 수는 없습니다!")
+	}
+	
+	let days=ms/(24*60*60*1000)
+	
+	days=Math.ceil(days);//소수점으로 결과가 나오기때문에
+	console.log(days);
+	document.getElementById("days").value=days;
+	
+	
+}
+
+</script>
+
+</body>
+</html>
